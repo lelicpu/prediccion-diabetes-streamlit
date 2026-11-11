@@ -140,15 +140,3 @@ En las filas 408 y 44 el pliegue cutáneo y la insulina valen 0 en el dataset (f
 - Solo incluye mujeres de ascendencia Pima de 21 años o más: los resultados no se pueden generalizar a otras poblaciones.
 - Las variables muestran asociación, no causalidad.
 
-## Uso de inteligencia artificial
-
-| Elemento | Descripción |
-|---|---|
-| **Herramienta** | Claude (Anthropic). |
-| **Propósito** | Revisar el pipeline del segundo avance, proponer la optimización de hiperparámetros, generar el código para guardar el pipeline con `joblib` y construir `app.py`, `requirements.txt`, `pruebas_app.py` y este README. |
-| **Prompt principal** | *"Con base en el notebook del segundo avance (Proyecto_Diabetes_Avance2.ipynb), el dataset y el enunciado de la Actividad 1 del tercer corte, revisa el rendimiento del modelo, optimízalo si es necesario registrando el antes y el después, guarda el pipeline completo con joblib y construye la aplicación de Streamlit con app.py, requirements.txt y README.md para publicarla en GitHub y Streamlit Community Cloud."* |
-| **Cómo se verificó** | Se re‑ejecutó el notebook completo y se confirmó que las métricas del segundo avance se reproducen; se comprobó que el nuevo preprocesamiento da exactamente las mismas predicciones que el anterior; se verificó que el `.joblib` cargado reproduce las 154 predicciones de prueba; se ejecutaron las 8 pruebas de `pruebas_app.py`; y se instaló `requirements.txt` en un entorno limpio para confirmar que la aplicación funciona solo con esas dependencias. |
-| **Problemas encontrados** | (1) La conversión de ceros a faltantes estaba fuera del pipeline, así que la aplicación habría tenido que repetirla a mano. (2) Los límites de los campos numéricos de Streamlit no explican por qué se rechaza un valor. (3) Un `.joblib` creado con una versión de scikit-learn puede fallar con otra. (4) Las tablas de la aplicación mostraban decimales incompletos y columnas cortadas. |
-| **Ajustes realizados** | Se movió todo el preprocesamiento al pipeline y se verificó la equivalencia; se agregó una función de validación con mensajes de error y advertencias; se fijaron las versiones en `requirements.txt`; se formatearon las tablas; y el modelo final se eligió por F1 y recall en validación cruzada, no por accuracy. |
-
-Todos los integrantes revisaron el código y son responsables de su contenido.
