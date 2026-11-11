@@ -1,4 +1,4 @@
-# 🩺 Predicción de diabetes con minería de datos
+#  Predicción de diabetes con minería de datos
 
 [![Abrir en Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediccion-diabetes-cuc.streamlit.app)
 
@@ -6,7 +6,7 @@ Aplicación web en Streamlit que estima si una paciente presenta diabetes a part
 
 **Aplicación publicada:** https://prediccion-diabetes-cuc.streamlit.app
 
-> ⚠️ **Prototipo académico.** La aplicación no es un dispositivo médico, no realiza diagnósticos y no sustituye la valoración de un profesional de la salud.
+>  **Prototipo académico.** La aplicación no es un dispositivo médico, no realiza diagnósticos y no sustituye la valoración de un profesional de la salud.
 
 ## Integrantes
 
@@ -110,14 +110,14 @@ Ejecutar `python pruebas_app.py` (usa `streamlit.testing`). Resultados:
 
 | Prueba | Entrada | Resultado esperado (notebook) | Resultado en la app |
 |---|---|---|---|
-| Caso normal | 30 años, 2 embarazos, glucosa 110, IMC 27.5, DPF 0.35, presión 70, pliegue 25, insulina 100 | Clase 0, probabilidad 0.267 | Clase 0 – No diabetes, 26.7 % ✅ |
-| Datos no disponibles | 45 años, 5 embarazos, glucosa 165, IMC 36, DPF 0.60, presión 76, pliegue e insulina «No disponible» | Clase 1, probabilidad 0.918 | Clase 1, 91.8 %, aviso de imputación ✅ |
-| Entrada inválida | Edad 15, glucosa 0, insulina 0 | Sin predicción | Error con los 3 campos y su rango válido ✅ |
-| Categoría inválida | Sexo masculino | Sin predicción | Error: el modelo solo aplica a mujeres ✅ |
-| Fuera del rango de entrenamiento | Glucosa 250 mg/dL | Predicción con advertencia | 88.2 % y advertencia ✅ |
-| Registro de prueba, fila 408 (real: diabetes) | 8 embarazos, glucosa 197, presión 74, IMC 25.9, DPF 1.191, 39 años | Clase 1, probabilidad 0.725 | Clase 1, 72.5 % ✅ |
-| Registro de prueba, fila 44 (real: no diabetes) | 7 embarazos, glucosa 159, presión 64, IMC 27.4, DPF 0.294, 40 años | Clase 1, probabilidad 0.732 (falsa alarma) | Clase 1, 73.2 % ✅ |
-| Verificación completa | 154 registros de prueba | Mismas predicciones y probabilidades | 154 de 154 coinciden ✅ |
+| Caso normal | 30 años, 2 embarazos, glucosa 110, IMC 27.5, DPF 0.35, presión 70, pliegue 25, insulina 100 | Clase 0, probabilidad 0.267 | Clase 0 – No diabetes, 26.7 %  |
+| Datos no disponibles | 45 años, 5 embarazos, glucosa 165, IMC 36, DPF 0.60, presión 76, pliegue e insulina «No disponible» | Clase 1, probabilidad 0.918 | Clase 1, 91.8 %, aviso de imputación  |
+| Entrada inválida | Edad 15, glucosa 0, insulina 0 | Sin predicción | Error con los 3 campos y su rango válido  |
+| Categoría inválida | Sexo masculino | Sin predicción | Error: el modelo solo aplica a mujeres  |
+| Fuera del rango de entrenamiento | Glucosa 250 mg/dL | Predicción con advertencia | 88.2 % y advertencia  |
+| Registro de prueba, fila 408 (real: diabetes) | 8 embarazos, glucosa 197, presión 74, IMC 25.9, DPF 1.191, 39 años | Clase 1, probabilidad 0.725 | Clase 1, 72.5 %  |
+| Registro de prueba, fila 44 (real: no diabetes) | 7 embarazos, glucosa 159, presión 64, IMC 27.4, DPF 0.294, 40 años | Clase 1, probabilidad 0.732 (falsa alarma) | Clase 1, 73.2 %  |
+| Verificación completa | 154 registros de prueba | Mismas predicciones y probabilidades | 154 de 154 coinciden  |
 
 En las filas 408 y 44 el pliegue cutáneo y la insulina valen 0 en el dataset (faltantes), por lo que en el formulario se marcan como «No disponible».
 
