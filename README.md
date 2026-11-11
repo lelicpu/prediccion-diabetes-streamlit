@@ -10,9 +10,9 @@ Aplicación web en Streamlit que estima si una paciente presenta diabetes a part
 
 ## Integrantes
 
-- Alison Lara Correa
-- Roger Bolaño Truyol
-- Valeri Alvarez Blanco
+-Alison Lara Correa-25786
+-Roger Bolaño Truyol-25368
+-Valeri Alvarez Blanco- 25158
 
 **Curso:** Minería de Datos · **Profesor:** José Escorcia Gutiérrez · **Programa:** Ingeniería de Sistemas – Universidad de la Costa (CUC)
 
